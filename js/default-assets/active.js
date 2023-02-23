@@ -225,7 +225,10 @@
     // :: 13.0 Countdown Active Code
     // ****************************
     if ($.fn.countdown) {
-        $("#clock").countdown("2019/08/29", function (event) {
+        const d = new Date();
+        let year = d.getFullYear();
+        let now = year+'/12/'+"31";
+        $("#clock").countdown(now, function (event) {
             $(this).html(event.strftime("<div>%m <span>Months</span></div> <div>%d <span>Days</span></div> <div>%H <span>Hours</span></div> <div>%M <span>Minutes</span></div> <div>%S <span>Seconds</span></div>"));
         });
     }
